@@ -36,4 +36,5 @@ class Actor(Artista):
     
     def _prueba():
         print("_prueba")
-        print("Hola")
+        print("Hola Cristian")
+        
