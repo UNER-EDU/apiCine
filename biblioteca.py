@@ -12,7 +12,9 @@ from modelos.pelicula import Pelicula
 
 class Biblioteca:
 
-    __archivoDeDatos = "H:\\UNTDF UNER\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
+    __archivoDeDatos = "C:\\co\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
+    #__archivoDeDatos ="c:\\code\\apiCine\\biblioteca.json"
+    #__archivoDeDatos en ruta pc Cristian
     __actores = []
     __directores = []
     __generos = []
@@ -52,6 +54,9 @@ class Biblioteca:
             elif orden == 'anio':
                 pass # completar
         pass # completar
+
+    def obtenerColegas(orden=None, reverso=False):
+        pass #
 
     def obtenerGeneros(orden=None, reverso=False):
         if isinstance(orden, str):

@@ -34,8 +34,14 @@ class Actor(Artista):
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
     
-    def _prueba():
-        print("_prueba")
-        print(self.obtenerGeneros())
+#c. La consulta obtenerColegas debe seguir la misma impronta que el punto 
+#anterior para intentar encontrar aquellos actores que han trabajado en la 
+#misma película con el actor en cuestión
+
+
+
+    
+#d. Se debe sobrecargar el operador de igualdad para que compare el 
+#atributo id de cada objeto de tipo Actor.
         
-        print("Hola Mundo...")
+
