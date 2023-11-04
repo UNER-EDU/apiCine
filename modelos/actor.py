@@ -36,5 +36,9 @@ class Actor(Artista):
     
     def _prueba():
         print("_prueba")
-        print("Hola Cristian")
+<<<<<<< HEAD
+        print(self.obtenerGeneros())
         
+=======
+        print("Hola")
+>>>>>>> c408c855e86ce741eb7a7f634d30556f4ca88f53
