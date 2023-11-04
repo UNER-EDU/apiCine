@@ -7,6 +7,9 @@ class Actor(Artista):
     def __init__(self, id, nombre):
         super().__init__(id, nombre)
 
+    def obtenerActor(self):
+        return self
+
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
 
@@ -31,7 +34,11 @@ class Actor(Artista):
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
     
-    def _prueba()
+    def _prueba():
         print("_prueba")
+<<<<<<< HEAD
         print(self.obtenerGeneros())
         
+=======
+        print("Hola")
+>>>>>>> c408c855e86ce741eb7a7f634d30556f4ca88f53
