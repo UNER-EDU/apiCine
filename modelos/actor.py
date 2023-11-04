@@ -30,3 +30,6 @@ class Actor(Artista):
         colegas = self.obtenerColegas()
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
+    
+    def _prueba()
+        print("_prueba")
