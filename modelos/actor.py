@@ -33,3 +33,5 @@ class Actor(Artista):
     
     def _prueba()
         print("_prueba")
+        print(self.obtenerGeneros())
+        
