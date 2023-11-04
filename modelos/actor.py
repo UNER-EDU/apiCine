@@ -34,5 +34,6 @@ class Actor(Artista):
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
     
-    def _prueba()
+    def _prueba():
         print("_prueba")
+        print("Hola")
