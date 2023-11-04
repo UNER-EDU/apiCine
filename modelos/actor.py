@@ -7,6 +7,9 @@ class Actor(Artista):
     def __init__(self, id, nombre):
         super().__init__(id, nombre)
 
+    def obtenerActor(self):
+        return self
+
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
 

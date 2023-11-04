@@ -12,7 +12,7 @@ from modelos.pelicula import Pelicula
 
 class Biblioteca:
 
-    __archivoDeDatos = "biblioteca.json"
+    __archivoDeDatos = "H:\\UNTDF UNER\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
     __actores = []
     __directores = []
     __generos = []
@@ -21,14 +21,7 @@ class Biblioteca:
     def inicializar():
         datos = Biblioteca.__parsearArchivoDeDatos()
         Biblioteca.__convertirJsonAListas(datos)
-
-    # def inicializar(self):
-
-    # # Parsear el archivo JSON
-    #     datos = self.__parsearArchivoDatos() 
-
-    #     # Convertir el JSON a las listas
-    #     self.__convertirJsonAListas(datos)
+        
 
     def obtenerActores(orden=None, reverso=False):
         if isinstance(orden, str):
@@ -67,7 +60,11 @@ class Biblioteca:
         pass # completar
 
     def buscarActor(id):
-        pass # completar
+        for actor in Biblioteca.__actores:
+            if actor.obtenerId()== id:
+                return actor
+        return None
+
 
     def buscarDirector(id):
         pass # completar
@@ -78,8 +75,16 @@ class Biblioteca:
     def buscarPelicula(id):
         pass # completar
 
+    #Metodo que debe cargar el json    
     def __parsearArchivoDeDatos():
-        pass # completar
+        archivo=open(Biblioteca.__archivoDeDatos,"r")
+        datos=json.load(archivo)
+        archivo.close()
+        return datos
 
+    #metodo que debe cargar las listas declaradas    
     def __convertirJsonAListas(lista):
-        pass # completar
+        Biblioteca.__peliculas=[]
+        for pelicula in lista["peliculas"]:
+             Biblioteca.__peliculas.append(Pelicula(**pelicula))
+             print(Biblioteca.__peliculas[0])
