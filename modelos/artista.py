@@ -29,3 +29,6 @@ class Artista:
         peliculas = self.obtenerPeliculas()
         peliculasMapa = map(lambda p: {"nombre": p.obtenerNombre(), "anio": p.obtenerAnio()}, peliculas)
         return list(peliculasMapa)
+
+    def saludos(self):
+        print("Hola soy el artista")
