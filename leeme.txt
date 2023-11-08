@@ -134,3 +134,99 @@ b. Se debe sobrecargar el operador de igualdad para que compare el
 atributo id de cada objeto de tipo Genero
 
 
+-----------------------------------------------------------------------------------------------------------
+
+Motor de Consultas
+Biblioteca es una clase que no posee atributos de instancia. Esto es así porque no 
+sigue el propósito de crear objetos de tipo Biblioteca a partir de ella, sino como entidad 
+para centralizar las consultas a realizarse sobre la base datos. Entonces, tanto las 
+entidades que modelan los objetos del mundo (Artista, Actor, Director, Película, Género) 
+deberán hacer uso de las consultas de Biblioteca directamente sobre la Clase en lugar 
+de un objeto creado a partir de ella.
+2. Dada la clase Biblioteca, contenida en biblioteca.py, y que responde al siguiente 
+diagrama:
+Biblioteca
+<<Atributos de clase>>
+archivoDeDatos = “biblioteca.json”
+actores = Actor[]
+directores = Director[]
+generos = Genero[]
+peliculas = Pelicula[]
+<<Atributos de instancia>>
+<<Constructores>>
+<<Comandos>>
+Inicializar()
+<<Consultas>>
+obtenerActores(orden, reverso: str): Actor[]
+obtenerDirectores(orden, reverso: str): Director[]
+obtenerPeliculas(orden, reverso: str): Pelicula[]
+obtenerGeneros(orden, reverso: str): Genero[]
+buscarActor(id: str): Actor
+buscarDirector(id: str): Director
+buscarPelicula(id: str): Pelicula
+buscarGenero(id: str): Genero
+
+a. Utilizar las colecciones Biblioteca.actores, Biblioteca.directores, 
+Biblioteca.peliculas, Biblioteca.generos para codificar las consultas 
+según corresponda.
+b. Para las consultas obtenerActores, obtenerDirectores, 
+obtenerPeliculas y obtenerGeneros, si se recibe:
+i. Los parámetros opcionales orden <> None y reverso = True, 
+devolver una copia de la colección correspondiente, ordenando 
+los objetos de la misma por el atributo indicado en orden inverso.
+ii. Ninguno de los parámetros opcionales, devolver una referencia a 
+la colección correspondiente sin alterar su orden.
+c. Para las consultas buscarActor, buscarDirector, buscarPelicula y 
+buscarGenero:
+i. Utilizar el parámetro formal id para navegar la colección y 
+encontrar el elemento que coincida con dicho identificador.
+ii. Si no se encontrase coincidencia, retornar el valor None.
+d. Codificar la lógica del método interno __parsearArchivoDeDatos de 
+manera que:
+i. Abra el archivo de datos.
+ii. Cargue la información en una estructura de tipo diccionario.
+iii. Cierre el archivo.
+iv. Retorne una referencia al diccionario anteriormente creado.
+e. Codificar la lógica del método interno __convertirJsonAListas(listas: 
+dict[]) de la siguiente manera:
+i. Se espera se completen las 4 colecciones:
+1. Biblioteca.actores
+2. Biblioteca.directores
+3. Biblioteca.peliculas
+4. Biblioteca.generos
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
+Ejecución y Prueba
+Al finalizar la codificación del trabajo, el alumno podrá verificar que su solución 
+es correcta y cumple con los requisitos para aprobar este trabajo si es que al correr el 
+aplicativo y al visitarse las siguientes URL a través de un navegador web, se obtienen 
+los resultados que se muestra a continuación:
+URL: http://127.0.0.1:5000/api/actores/316ae44b-16d8-4490-9be1-016e6415d289
+Resultado Esperado:
+{"nombre": "Leonardo Di Caprio", "generos": ["comedia", "ciencia 
+ficcion"], "peliculas": [{"nombre": "The Wolf of Wall Street", "anio": 
+"2013"}, {"nombre": "Inception", "anio": "2010"}], "colegas": ["Margot 
+Robbie", "Cillian Murphy"]}
+URL: http://127.0.0.1:5000/api/directores/b8ac5230-107d-45c4-9177-215a199b6b8a
+Resultado Esperado:
+{"nombre": "Christopher Nolan", "generos": ["ciencia ficcion", 
+"accion"], "peliculas": [{"nombre": "Inception", "anio": "2010"}, 
+{"nombre": "The Dark Knight", "anio": "2008"}]}
+URL: http://127.0.0.1:5000/api/peliculas/1da2004f-be88-4cd3-93be-1442fbbd78a1
+Resultado Esperado:
+{"nombre": "Barbie", "genero": "comedia", "director": "Greta Gerwig", 
+"actores": ["Margot Robbie", "Ryan Gosling"], "anio": "2023"}
+URL: http://127.0.0.1:5000/api/peliculas?orden=nombre&reverso=si
+Resultado Esperado:
+[{"nombre": "The Wolf of Wall Street", "genero": "comedia", 
+"director": "Martin Scorsese", "actores": 2, "anio": "2013"}, 
+{"nombre": "The Dark Knight", "genero": "accion", "director": 
+"Christopher Nolan", "actores": 2, "anio": "2008"}, {"nombre": 
+"Inception", "genero": "ciencia ficcion", "director": "Christopher 
+Nolan", "actores": 2, "anio": "2010"}, {"nombre": "Barbie", "genero": 
+"comedia", "director": "Greta Gerwig", "actores": 2, "anio": "2023"}]
+
