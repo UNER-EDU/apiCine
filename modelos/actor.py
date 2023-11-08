@@ -1,5 +1,5 @@
 import json
-import biblioteca
+import biblioteca 
 from modelos.artista import Artista
 
 class Actor(Artista):
@@ -7,11 +7,12 @@ class Actor(Artista):
     def __init__(self, id, nombre):
         super().__init__(id, nombre)
 
-    def obtenerActor(self):
-        return self
-
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
+
+    def obtenerPeliculas(self):
+        for pelicula in biblioteca.__peliculas:
+            print(pelicula)
 
     def convertirAJSON(self):
         return {
@@ -34,8 +35,4 @@ class Actor(Artista):
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
     
-    def _prueba():
-        print("_prueba")
-        print(self.obtenerGeneros())
-        print("Hola")
-
+  

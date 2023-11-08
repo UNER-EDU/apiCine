@@ -21,59 +21,78 @@ class Biblioteca:
     def inicializar():
         datos = Biblioteca.__parsearArchivoDeDatos()
         Biblioteca.__convertirJsonAListas(datos)
+        print("Ingresando a biblioteca")
         
 
     def obtenerActores(orden=None, reverso=False):
+        actores=Biblioteca.__actores
         if isinstance(orden, str):
             if orden == 'nombre':
-                pass # completar
+                actores=sorted(actores,key=lambda a:a.obtenerNombre(), reverse=reverso)
             elif orden == 'colegas':
-                pass # completar
+                actores=sorted(actores,key=lambda a:a.obtenerColegas(),reverse=reverso)
             elif orden == 'peliculas':
-                pass # completar
-        pass # completar
+               actores=sorted(actores,key=lambda a:a.obtenerPeliculas(),reverse=reverso)
+        return actores
 
     def obtenerDirectores(orden=None, reverso=False):
+        directores=Biblioteca.__directores
         if isinstance(orden, str):
             if orden == 'nombre':
-                pass # completar
+                directores=sorted(directores,key=lambda a:a.obtenerNombre(),reverse=reverso)
             elif orden == 'peliculas':
-                pass # completar
-        pass # completar
+              directores=sorted(directores,key=lambda a:a.obtenerPeliculas(),reverse=reverso)
+        return directores
 
     def obtenerPeliculas(orden=None, reverso=False):
+        peliculas=Biblioteca.__peliculas
         if isinstance(orden, str):
             if orden == 'nombre':
-                pass # completar
+              peliculas=sorted(peliculas,key=lambda a:a.obtenerNombre(),reverse=reverso)
             elif orden == 'director':
-                pass # completar
+                peliculas=sorted(peliculas,key=lambda a:a.obtenerDirector(),reverse=reverso)
             elif orden == 'actores':
-                pass # completar
+                peliculas=sorted(peliculas,key=lambda a:a.obtenerActores(),reverse=reverso)
             elif orden == 'anio':
-                pass # completar
-        pass # completar
+                peliculas=sorted(peliculas,key=lambda a:a.obtenerAnio(),reverse=reverso)
+        return peliculas
 
     def obtenerGeneros(orden=None, reverso=False):
+        generos=Biblioteca.__generos
         if isinstance(orden, str):
             if orden == 'nombre':
-                pass # completar
-        pass # completar
+               generos=sorted(generos,key=lambda a:a.obtenerNombre(),reverse=reverso)
+        return generos
 
     def buscarActor(id):
+        actorEncontrado=None
         for actor in Biblioteca.__actores:
             if actor.obtenerId()== id:
-                return actor
-        return None
+                actorEncontrado=actor                
+        return actorEncontrado
 
 
     def buscarDirector(id):
-        pass # completar
+        directorEncontrado=None
+        for director in Biblioteca.__directores:
+            if director.obtenerId()== id:
+                directorEncontrado=director
+        return directorEncontrado
 
     def buscarGenero(id):
-        pass # completar
+        generoEncontrado = None
+        for genero in Biblioteca.__generos:
+            if genero.obtenerId()== id:
+               generoEncontrado=genero
+        return generoEncontrado
 
     def buscarPelicula(id):
-        pass # completar
+        peliculaEncontrada = None
+        for pelicula in Biblioteca.__peliculas:
+            if pelicula.obtenerId()== id:
+                peliculaEncontrada=pelicula
+        return peliculaEncontrada
+        
 
     #Metodo que debe cargar el json    
     def __parsearArchivoDeDatos():
@@ -87,4 +106,9 @@ class Biblioteca:
         Biblioteca.__peliculas=[]
         for pelicula in lista["peliculas"]:
              Biblioteca.__peliculas.append(Pelicula(**pelicula))
-             print(Biblioteca.__peliculas[0])
+        for actores in lista["actores"]:
+            Biblioteca.__actores.append(Actor(**actores))
+        for genero in lista["generos"]:
+            Biblioteca.__generos.append(Genero(**genero))
+        for directores in lista["directores"]:
+            Biblioteca.__directores.append(Director(**directores))
