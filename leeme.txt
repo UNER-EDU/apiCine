@@ -18,3 +18,119 @@ obtenerPeliculas de las clases que heredan de ella, para
 obtener la lista de películas asociadas ya sea a un Actor
 o un Director.                                              #está   
 
+-----------------------------------------------------------------------------------------------------------
+
+Actor (Artista)
+<<Atributos de clase>>
+<<Atributos de instancia>>
+id: str
+nombre: str
+<<Constructores>>
+Actor(id, nombre: str)
+<<Comandos>>
+<<Consultas>>
+obtenerPeliculas(): Pelicula[]
+obtenerColegas(): Actor[]
+convertirAJSON(): dict
+convertirAJSONFull(): dict
+
+
+a. Utilizar el archivo actor.py
+b. La consulta obtenerPeliculas debe hacer uso del servicio 
+obtenerPeliculas de la clase Biblioteca para recuperar todas las 
+películas contenidas en el archivo json. Sobre dicha lista se debe iterar 
+hasta encontrar las películas en las que el actor ha trabajado.
+c. La consulta obtenerColegas debe seguir la misma impronta que el punto 
+anterior para intentar encontrar aquellos actores que han trabajado en la 
+misma película con el actor en cuestión.
+d. Se debe sobrecargar el operador de igualdad para que compare el 
+atributo id de cada objeto de tipo Actor
+
+-----------------------------------------------------------------------------------------------------------
+
+Director (Artista)
+<<Atributos de clase>>
+<<Atributos de instancia>>
+<<Constructores>>
+Director(id, nombre: str)
+<<Comandos>>
+<<Consultas>>
+obtenerPeliculas(): Pelicula[]
+convertirAJSON(): dict
+convertirAJSONFull(): dict
+
+
+a. Utilizar el archivo director.py
+b. La consulta obtenerPeliculas debe hacer uso del servicio 
+obtenerPeliculas de la clase Biblioteca para recuperar todas las 
+películas contenidas en el archivo json. Sobre dicha lista se debe iterar 
+hasta encontrar las películas en las que el director ha trabajado.
+c. Se debe sobrecargar el operador de igualdad para que compare el 
+atributo id de cada objeto de tipo Director
+
+-----------------------------------------------------------------------------------------------------------
+
+
+Pelicula
+<<Atributos de clase>>
+<<Atributos de instancia>>
+Id: str
+nombre: str
+genero: str
+director: str
+actores: str[]
+anio: int
+<<Constructores>>
+Pelicula(id, nombre, genero, director: str, actores: str[], anio: 
+int)
+<<Comandos>>
+establecerNombre(nombre: str)
+establecerGenero(genero: str)
+establecerDirector(director: str)
+establecerActores(actores: str[])
+establecerAnio(anio: int)
+<<Consultas>>
+obtenerId(): str
+obtenerNombre: str
+obtenerGenero: Genero
+obtenerDirector: Director
+obtenerActores: Actor[]
+obtenerAnio: int
+convertirAJSON(): dict
+convertirAJSONFull(): dict
+
+
+a. Utilizar el archivo pelicula.py
+b. La consulta obtenerGenero debe hacer uso del servicio buscarGenero 
+de la clase Biblioteca para recuperar el objeto de tipo Genero asociado 
+a la película.
+c. La consulta obtenerDirector debe hacer uso del servicio 
+buscarDirector de la clase Biblioteca para recuperar el objeto de tipo 
+Director asociado a la película.
+d. La consulta obtenerActores debe hacer uso del servicio 
+obtenerActores de la clase Biblioteca para recuperar todos los actores 
+y partiendo de allí encontrar aquellos que trabajaron en la película en 
+cuestión.
+e. Se debe sobrecargar el operador de igualdad para que compare el 
+atributo id de cada objeto de tipo Pelicula
+
+-----------------------------------------------------------------------------------------------------------
+
+Genero
+<<Atributos de clase>>
+<<Atributos de instancia>>
+id: str
+nombre: str
+<<Constructores>>
+Genero(id, nombre: str)
+<<Comandos>>
+establecerNombre(nombre: str)
+<<Consultas>>
+obtenerId(): str
+obtenerNombre(): str
+convertirAJSON(): dict
+a. Utilizar el archivo genero.py
+b. Se debe sobrecargar el operador de igualdad para que compare el 
+atributo id de cada objeto de tipo Genero
+
+
