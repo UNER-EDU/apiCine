@@ -1,6 +1,5 @@
 import json
 import biblioteca 
-
 from modelos.artista import Artista
 
 class Director(Artista):
@@ -12,7 +11,7 @@ class Director(Artista):
         return json.dumps(self.convertirAJSON())
     
     def obtenerPeliculas(self):
-        peliculas = Biblioteca.obtenerPeliculas()  # Obtener todas las películas de la biblioteca
+        peliculas = biblioteca.Biblioteca.obtenerPeliculas()  # Obtener todas las películas de la biblioteca
         peliculas_director = []
 
         # Iterar sobre las películas para encontrar las que tienen al director actual como director
@@ -35,4 +34,3 @@ class Director(Artista):
             "generos": self._mapearGeneros(),
             "peliculas": self._mapearPeliculas(),
         }
-    

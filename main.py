@@ -9,10 +9,8 @@ from recursos import *
 
 if __name__ == "__main__":
     Biblioteca.inicializar()
-
     print(Biblioteca.obtenerActores())
-    print(Biblioteca.obtenerDirectores())
-
+  
     app = Flask(__name__)
 
     api = Api(app)
@@ -23,4 +21,4 @@ if __name__ == "__main__":
     api.add_resource(RecursoPelicula, '/api/peliculas/<id>')
     api.add_resource(RecursoPeliculas, '/api/peliculas')
 
-    app.run(debug=True)
+    app.run()

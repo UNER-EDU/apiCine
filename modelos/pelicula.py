@@ -11,6 +11,9 @@ class Pelicula:
         self.__actores=actores
         self.__anio=anio
     
+    def obtenerId(self):
+        return self.__id
+
     def obtenerDiretor(self):
         return self.__id
     
