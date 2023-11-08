@@ -1,0 +1,19 @@
+Artista
+<<Atributos de clase>>
+<<Atributos de instancia>>
+id: str
+nombre: str
+<<Constructores>>
+Artista(id, nombre: str)					#está
+<<Comandos>>
+establecerNombre(nombre: str)					#está
+<<Consultas>>
+obtenerId(): str						#está
+obtenerNombre(): str						#está
+obtenerGeneros(): Genero[]					#está
+
+a. Utilizar el archivo artista.py				#está
+b. La consulta obtenerGeneros debe hacer uso del servicio 
+obtenerPeliculas de las clases que heredan de ella, para 
+obtener la lista de películas asociadas ya sea a un Actor
+o un Director.

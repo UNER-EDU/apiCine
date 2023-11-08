@@ -31,4 +31,6 @@ class Artista:
         return list(peliculasMapa)
 
     def saludos(self):
-        print("Hola soy el artista")
+       print("Hola soy el artista")
+
+    
