@@ -25,3 +25,6 @@ class Genero:
         return {
             "nombre": self.obtenerNombre()
         }
+
+    def __eq__(self, __value: object):        
+        pass
