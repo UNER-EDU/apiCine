@@ -10,9 +10,24 @@ class Actor(Artista):
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
 
+    #mi metodo obtener Pelicula
     def obtenerPeliculas(self):
-        for pelicula in biblioteca.__peliculas:
-            print(pelicula)
+        peliculas = biblioteca.Biblioteca.obtenerPeliculas()  # Obtener todas las películas de la biblioteca
+        peliculas_actor = []
+
+        # Iterar sobre las películas para encontrar las que tienen al director actual como director
+        for pelicula in peliculas:
+            if pelicula.obtenerDirector() == self:
+                peliculas_actor.append(pelicula)
+
+        return peliculas_actor
+       
+           
+    
+    #mi metodo obtener Colega
+    def obtenerColegass(self):
+        for colegas in biblioteca.__colegas:
+            print(colegas) 
 
     def convertirAJSON(self):
         return {

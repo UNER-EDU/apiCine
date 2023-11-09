@@ -9,7 +9,7 @@ from recursos import *
 
 if __name__ == "__main__":
     Biblioteca.inicializar()
-    print(Biblioteca.obtenerActores())
+    #print(Biblioteca.obtenerActores())
   
     app = Flask(__name__)
 
