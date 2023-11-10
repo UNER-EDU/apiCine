@@ -34,3 +34,11 @@ class Director(Artista):
             "generos": self._mapearGeneros(),
             "peliculas": self._mapearPeliculas(),
         }
+    
+        #punto b
+    def obtenerPeliculas(self):
+        peliculas = []
+        for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
+            if self == biblioteca.Biblioteca.obtenerDirectores():
+                peliculas.append(pelicula)
+        return peliculas
