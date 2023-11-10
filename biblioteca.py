@@ -11,8 +11,8 @@ from modelos.pelicula import Pelicula
 
 
 class Biblioteca:
-
-    __archivoDeDatos = "C:\\co\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
+    # Ruta de archivo Luis
+    __archivoDeDatos = "H:\\UNTDF UNER\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
     #__archivoDeDatos ="c:\\code\\apiCine\\biblioteca.json"
     #__archivoDeDatos en ruta pc Cristian
     __actores = []
@@ -58,10 +58,7 @@ class Biblioteca:
             elif orden == 'anio':
                 peliculas=sorted(peliculas,key=lambda a:a.obtenerAnio(),reverse=reverso)
         return peliculas
-
-     
-     
-
+    
     def obtenerGeneros(orden=None, reverso=False):
         generos=Biblioteca.__generos
         if isinstance(orden, str):
@@ -108,12 +105,22 @@ class Biblioteca:
 
     #metodo que debe cargar las listas declaradas    
     def __convertirJsonAListas(lista):
+        #Obtengo el listado de peliculas
         Biblioteca.__peliculas=[]
         for pelicula in lista["peliculas"]:
              Biblioteca.__peliculas.append(Pelicula(**pelicula))
+
+        #Obtengo el listado de actores
+        Biblioteca.__actores=[]
         for actores in lista["actores"]:
             Biblioteca.__actores.append(Actor(**actores))
+
+        #Obtengo el listado de directores
+        Biblioteca.__directores=[]
         for genero in lista["generos"]:
             Biblioteca.__generos.append(Genero(**genero))
+
+        #Obtengo el listado de generos
+        Biblioteca.__generos=[]
         for directores in lista["directores"]:
             Biblioteca.__directores.append(Director(**directores))

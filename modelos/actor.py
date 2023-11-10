@@ -10,10 +10,6 @@ class Actor(Artista):
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
 
-     
-     
-     
-
     def convertirAJSON(self):
         return {
             "nombre": self.obtenerNombre(),
