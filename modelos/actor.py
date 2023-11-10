@@ -31,7 +31,7 @@ class Actor(Artista):
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
     
-    #punto
+    #punto b
     def obtenerPeliculas(self):
         peliculas = []
         for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
@@ -39,7 +39,7 @@ class Actor(Artista):
                 peliculas.append(pelicula)
         return peliculas
 
-
+    #punto c
     def obtenerColegas(self):
         colegas = []
         for pelicula in self.obtenerPeliculas():
@@ -48,6 +48,6 @@ class Actor(Artista):
                         colegas.append(actor)
         return colegas
         
-        
+    #punto d
     def __eq__(self, otro):
         return self.__id == otro.obtenerId()
