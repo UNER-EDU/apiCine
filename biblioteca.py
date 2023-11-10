@@ -59,8 +59,8 @@ class Biblioteca:
                 peliculas=sorted(peliculas,key=lambda a:a.obtenerAnio(),reverse=reverso)
         return peliculas
 
-    def obtenerColegas(orden=None, reverso=False):
-        pass #
+     
+     
 
     def obtenerGeneros(orden=None, reverso=False):
         generos=Biblioteca.__generos

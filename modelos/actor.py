@@ -10,9 +10,9 @@ class Actor(Artista):
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
 
-    def obtenerPeliculas(self):
-        for pelicula in biblioteca.__peliculas:
-            print(pelicula)
+     
+     
+     
 
     def convertirAJSON(self):
         return {
@@ -35,14 +35,23 @@ class Actor(Artista):
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
     
-#c. La consulta obtenerColegas debe seguir la misma impronta que el punto 
-#anterior para intentar encontrar aquellos actores que han trabajado en la 
-#misma película con el actor en cuestión
+    #punto
+    def obtenerPeliculas(self):
+        peliculas = []
+        for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
+            if self == biblioteca.Biblioteca.obtenerActores():
+                peliculas.append(pelicula)
+        return peliculas
 
 
-
-    
-#d. Se debe sobrecargar el operador de igualdad para que compare el 
-#atributo id de cada objeto de tipo Actor.
+    def obtenerColegas(self):
+        colegas = []
+        for pelicula in self.obtenerPeliculas():
+                for actor in pelicula.obtenerActores():
+                    if actor!= self and actor not in colegas:
+                        colegas.append(actor)
+        return colegas
         
-
+        
+    def __eq__(self, otro):
+        return self.__id == otro.obtenerId()
