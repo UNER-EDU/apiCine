@@ -11,24 +11,35 @@ class Pelicula:
         self.__actores=actores
         self.__anio=anio
     
+    #Comandos
+    def establecerNombre(self,nombre):
+        self.__nombre=nombre
+
+    def establecerGenero(self,genero):
+        self.__genero=genero
+
+    def establecerDirector(self,director):
+        self.__director=director
+    
+    def establecerActores(self,actores):
+        self.__actores=actores
+
+    def establecerAnio(self,anio):
+        self.__anio=anio
+
+    #Consultas
     def obtenerId(self):
         return self.__id
 
-    def obtenerDirector(self):
-        return self.__id
-    
-    def obtenerNombre(self):
-        return self.__nombre
-    
-    def obtenerDirector(self):
+    def obtenerGenero(self):
         return self.__genero
     
     def obtenerDirector(self):
         return self.__director
     
-    def obtenerAcctores(self):
-        return self.__actores
-
+    def obtenerActor(self):
+        return self.__actores    
+    
     def obtenerAnio(self):
         return self.__anio
 
@@ -62,3 +73,7 @@ class Pelicula:
         actores = self.obtenerActores()
         actoresMapa = map(lambda a: a.obtenerNombre(), actores)
         return list(actoresMapa)
+    
+    #sobrecargando
+    def __eq__(self, otro):
+        return self.__id == otro.obtenerId()
