@@ -42,6 +42,7 @@ class Pelicula:
     
     def obtenerActores(self):
         return self.__actores    
+        return biblioteca.Biblioteca.obtenerActores(self)
     
     def obtenerAnio(self):
         return self.__anio
