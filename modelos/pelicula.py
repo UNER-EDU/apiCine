@@ -20,7 +20,7 @@ class Pelicula:
     def obtenerNombre(self):
         return self.__nombre
     
-    def obtenerDirctor(self):
+    def obtenerDirector(self):
         return self.__genero
     
     def obtenerDiretor(self):
