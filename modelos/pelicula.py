@@ -14,19 +14,19 @@ class Pelicula:
     def obtenerId(self):
         return self.__id
 
-    def obtenerDiretor(self):
+    def obtenerDirector(self):
         return self.__id
     
     def obtenerNombre(self):
         return self.__nombre
     
-    def obtenerDirctor(self):
+    def obtenerDirector(self):
         return self.__genero
     
-    def obtenerDiretor(self):
+    def obtenerDirector(self):
         return self.__director
     
-    def obtenerDiretor(self):
+    def obtenerDirector(self):
         return self.__actores
 
     def obtenerAnio(self):

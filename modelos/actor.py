@@ -1,6 +1,6 @@
 import json
 import biblioteca 
-from modelos.artista import Artista
+from modelos.artista import *
 
 class Actor(Artista):
 
@@ -25,16 +25,16 @@ class Actor(Artista):
            
     
     #mi metodo obtener Colega
-    def obtenerColegass(self):
-        for colegas in biblioteca.__colegas:
-            print(colegas) 
+    def obtenerColegas(self):
+       
+        pass
 
     def convertirAJSON(self):
         return {
             "nombre": self.obtenerNombre(),
             "generos": self._mapearGeneros(),
             "peliculas": len(self.obtenerPeliculas()),
-            "colegas": len(self.obtenerColegas())
+            # "colegas": len(self.obtenerColegas())
         }
 
     def convertirAJSONFull(self):
