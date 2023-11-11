@@ -13,7 +13,7 @@ from modelos.pelicula import Pelicula
 class Biblioteca:
     # Ruta de archivo Luis
     #__archivoDeDatos = "H:\\UNTDF UNER\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
-    __archivoDeDatos ="c:\\code\\apiCine\\biblioteca.json"
+    __archivoDeDatos ="c:\\code\\Api_cine_Uner\\\\apiCine\\biblioteca.json"    
     #__archivoDeDatos en ruta pc Cristian
     __actores = []
     __directores = []
