@@ -28,7 +28,7 @@ class Pelicula:
         self.__anio=anio
 
     #Consultas
-    def obtenerNombre(self,nombre):
+    def obtenerNombre(self):
         return self.__nombre
 
     def obtenerId(self):
