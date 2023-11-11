@@ -25,25 +25,25 @@ Actor (Artista)
 <<Atributos de instancia>>
 id: str
 nombre: str
-<<Constructores>>
-Actor(id, nombre: str)
-<<Comandos>>
+<<Constructores>>					#está
+Actor(id, nombre: str)				
+<<Comandos>>						#
 <<Consultas>>
-obtenerPeliculas(): Pelicula[]
-obtenerColegas(): Actor[]
+obtenerPeliculas(): Pelicula[]			punto b #realizado ver línea 38 revisar
+obtenerColegas(): Actor[]			punto c #realizado ver línea 46 profe
 convertirAJSON(): dict
 convertirAJSONFull(): dict
 
 
-a. Utilizar el archivo actor.py
-b. La consulta obtenerPeliculas debe hacer uso del servicio 
-obtenerPeliculas de la clase Biblioteca para recuperar todas las 
+a. Utilizar el archivo actor.py							#está	
+b. La consulta obtenerPeliculas debe hacer uso del servicio 		
+obtenerPeliculas de la clase Biblioteca para recuperar todas las 		#revisar
 películas contenidas en el archivo json. Sobre dicha lista se debe iterar 
-hasta encontrar las películas en las que el actor ha trabajado.
+hasta encontrar las películas en las que el actor ha trabajado.			
 c. La consulta obtenerColegas debe seguir la misma impronta que el punto 
 anterior para intentar encontrar aquellos actores que han trabajado en la 
 misma película con el actor en cuestión.
-d. Se debe sobrecargar el operador de igualdad para que compare el 
+d. Se debe sobrecargar el operador de igualdad para que compare el 		#está
 atributo id de cada objeto de tipo Actor
 
 -----------------------------------------------------------------------------------------------------------
@@ -55,18 +55,18 @@ Director (Artista)
 Director(id, nombre: str)
 <<Comandos>>
 <<Consultas>>
-obtenerPeliculas(): Pelicula[]
+obtenerPeliculas(): Pelicula[]		------>                a realizar 9/11 idem actor
 convertirAJSON(): dict
 convertirAJSONFull(): dict
 
 
-a. Utilizar el archivo director.py
-b. La consulta obtenerPeliculas debe hacer uso del servicio 
+a. Utilizar el archivo director.py					 
+b. La consulta obtenerPeliculas debe hacer uso del servicio 		#a realizar 9/11
 obtenerPeliculas de la clase Biblioteca para recuperar todas las 
 películas contenidas en el archivo json. Sobre dicha lista se debe iterar 
 hasta encontrar las películas en las que el director ha trabajado.
-c. Se debe sobrecargar el operador de igualdad para que compare el 
-atributo id de cada objeto de tipo Director
+c. Se debe sobrecargar el operador de igualdad para que compare el 	#a realizar 9/11
+atributo id de cada objeto de tipo Director				#idem actor
 
 -----------------------------------------------------------------------------------------------------------
 

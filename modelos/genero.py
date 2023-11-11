@@ -26,5 +26,5 @@ class Genero:
             "nombre": self.obtenerNombre()
         }
 
-    def __eq__(self, __value: object):        
-        pass
+    def __eq__(self, otro):        
+        return self.__id == otro.obtenerId()
