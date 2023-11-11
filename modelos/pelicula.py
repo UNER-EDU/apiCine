@@ -2,7 +2,7 @@ import json
 import biblioteca
 
 class Pelicula:
-
+    #Metodo constructor
     def __init__(self,id,nombre,genero,director,actores,anio):
         self.__id = id
         self.__nombre= nombre
