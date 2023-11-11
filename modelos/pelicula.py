@@ -13,7 +13,7 @@ class Pelicula:
     
     #Comandos
     def establecerNombre(self,nombre):
-        self.__nombre=nombre
+        self.__nombre = nombre
 
     def establecerGenero(self,genero):
         self.__genero=genero
@@ -31,16 +31,13 @@ class Pelicula:
     def obtenerId(self):
         return self.__id
 
-    def obtenerNombre(self):
-        return self.__nombre    
-
     def obtenerGenero(self):
         return self.__genero
     
     def obtenerDirector(self):
         return self.__director
     
-    def obtenerActores(self):
+    def obtenerActor(self):
         return self.__actores    
     
     def obtenerAnio(self):
@@ -77,6 +74,6 @@ class Pelicula:
         actoresMapa = map(lambda a: a.obtenerNombre(), actores)
         return list(actoresMapa)
     
-    # #sobrecargando
-    # def __eq__(self, otro):
-    #     return self.__id == otro.obtenerId()
+    #sobrecargando
+    def __eq__(self, otro):
+        return self.__id == otro.obtenerId()
