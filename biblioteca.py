@@ -20,10 +20,20 @@ class Biblioteca:
     __generos = []
     __peliculas = []
 
+
     def inicializar():
         datos = Biblioteca.__parsearArchivoDeDatos()
         Biblioteca.__convertirJsonAListas(datos)
-        print("Ingresando a biblioteca")
+        # print("Ingresando a biblioteca")
+        # print("Listados")
+        # print("Actores")
+        # print(Biblioteca.obtenerActores())
+        # print("Directores")
+        # print(Biblioteca.obtenerDirectores())
+        # print("Peliculas")
+        # print(Biblioteca.obtenerPeliculas())
+        # print("Generos")
+        # print(Biblioteca.obtenerGeneros())
         
 
     def obtenerActores(orden=None, reverso=False):
@@ -117,10 +127,10 @@ class Biblioteca:
 
         #Obtengo el listado de directores
         Biblioteca.__directores=[]
-        for genero in lista["generos"]:
-            Biblioteca.__generos.append(Genero(**genero))
+        for director in lista["directores"]:
+            Biblioteca.__directores.append(Director(**director))
 
         #Obtengo el listado de generos
         Biblioteca.__generos=[]
-        for directores in lista["directores"]:
-            Biblioteca.__directores.append(Director(**directores))
+        for genero in lista["generos"]:
+            Biblioteca.__generos.append(Genero(**genero))

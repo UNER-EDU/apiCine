@@ -4,7 +4,7 @@ class Artista:
         self.id = id
         self.nombre= nombre
 
-    def establecerNOmbre(self,nombre):
+    def establecerNombre(self,nombre):
         self.nombre=nombre
 
     def obtenerId(self):

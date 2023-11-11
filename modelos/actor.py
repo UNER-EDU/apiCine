@@ -1,6 +1,6 @@
 import json
 import biblioteca 
-from modelos.artista import Artista
+from modelos.artista import *
 
 class Actor(Artista):
 
@@ -15,7 +15,7 @@ class Actor(Artista):
             "nombre": self.obtenerNombre(),
             "generos": self._mapearGeneros(),
             "peliculas": len(self.obtenerPeliculas()),
-            "colegas": len(self.obtenerColegas())
+            # "colegas": len(self.obtenerColegas())
         }
 
     def convertirAJSONFull(self):
