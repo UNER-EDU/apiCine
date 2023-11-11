@@ -21,4 +21,4 @@ if __name__ == "__main__":
     api.add_resource(RecursoPelicula, '/api/peliculas/<id>')
     api.add_resource(RecursoPeliculas, '/api/peliculas')
 
-    app.run()
+    app.run(debug=True)

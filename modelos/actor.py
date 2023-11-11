@@ -6,6 +6,9 @@ class Actor(Artista):
 
     def __init__(self, id, nombre):
         super().__init__(id, nombre)
+        self.id=id
+        self.nombre=nombre
+        
 
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
@@ -49,5 +52,5 @@ class Actor(Artista):
         return colegas
         
     #punto d
-    def __eq__(self, otro):
-        return self.__id == otro.obtenerId()
+    # def __eq__(self, otro):
+    #     return self.__id == otro.obtenerId()

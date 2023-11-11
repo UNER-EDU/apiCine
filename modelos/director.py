@@ -10,16 +10,16 @@ class Director(Artista):
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
     
-    def obtenerPeliculas(self):
-        peliculas = biblioteca.Biblioteca.obtenerPeliculas()  # Obtener todas las películas de la biblioteca
-        peliculas_director = []
+    # def obtenerPeliculas(self):
+    #     peliculas = biblioteca.Biblioteca.obtenerPeliculas()  # Obtener todas las películas de la biblioteca
+    #     peliculas_director = []
 
-        # Iterar sobre las películas para encontrar las que tienen al director actual como director
-        for pelicula in peliculas:
-            if pelicula.obtenerDirector() == self:
-                peliculas_director.append(pelicula)
+    #     # Iterar sobre las películas para encontrar las que tienen al director actual como director
+    #     for pelicula in peliculas:
+    #         if pelicula.obtenerDirector() == self:
+    #             peliculas_director.append(pelicula)
 
-        return peliculas_director
+    #     return peliculas_director
 
     def convertirAJSON(self):
         return {
@@ -43,6 +43,6 @@ class Director(Artista):
                 peliculas.append(pelicula)
         return peliculas
 
-    #punto d
-    def __eq__(self, otro):
-        return self.__id == otro.obtenerId()
+    # #punto d
+    # def __eq__(self, otro):
+    #     return self.__id == otro.obtenerId()
