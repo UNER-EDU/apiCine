@@ -40,7 +40,7 @@ class Pelicula:
     def obtenerDirector(self):
         return self.__director
     
-    def obtenerActor(self):
+    def obtenerActores(self):
         return self.__actores    
     
     def obtenerAnio(self):
