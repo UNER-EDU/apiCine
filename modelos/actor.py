@@ -61,15 +61,6 @@ class Actor(Artista):
         return peliculas_actuadas
 
 
-    """   
-    def obtenerPeliculas(self):
-        peliculas = []
-        for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
-            if self in pelicula.obtenerActores():
-                peliculas.append(pelicula)
-        return peliculas
-    """ 
-    
     #punto c
     
     def obtenerColegas(self):
@@ -80,19 +71,6 @@ class Actor(Artista):
                         colegas.append(actor)
         return colegas
     
-    """    
-    def obtenerColegas(self):
-        colegas = set()
-        for pelicula in self.obtenerPeliculas():
-            colegas.update(pelicula.obtenerActores())
-        colegas.discard(self)
-        return list(colegas)
-    """ 
-
-    #punto d
-    # def __eq__(self, otro):
-    #     return self.__id == otro.obtenerId()
-
-
-    #def __eq__(self, other):
-    #    return isinstance(other, Actor) and self.obtenerNombre() == other.obtenerNombre()
+  
+    def __eq__(self, otro):
+        return isinstance(otro, Actor) and self.obtenerNombre().strip().lower() == otro.obtenerNombre().strip().lower()

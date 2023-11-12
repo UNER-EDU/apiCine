@@ -36,13 +36,32 @@ class Director(Artista):
         }
     
         #punto b
+    
+    def obtenerPeliculas(self):
+            # Obtener todas las películas de la biblioteca
+            peliculas = biblioteca.Biblioteca.obtenerPeliculas()
+            # Crear una lista para las películas en las que participa el actor
+            peliculas_dirigidas = []
+            # Recorrer todas las películas
+            for pelicula in peliculas:
+                 peliculas_dirigidas.append(pelicula)
+            # Devolver la lista de películas en las que participa el actor
+            return peliculas_dirigidas
+
+
+
+    
+    """
     def obtenerPeliculas(self):
         peliculas = []
         for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
             if self == biblioteca.Biblioteca.obtenerDirectores():
                 peliculas.append(pelicula)
         return peliculas
+      """
+    
 
-    # #punto d
-    # def __eq__(self, otro):
-    #     return self.__id == otro.obtenerId()
+
+
+    def __eq__(self, otro):
+        return isinstance(otro, Director) and self.obtenerNombre().strip().lower() == otro.obtenerNombre().strip().lower()
