@@ -1,5 +1,6 @@
 import json
 import biblioteca
+from modelos.actor import *
 
 class Pelicula:
     #Metodo constructor
@@ -28,6 +29,9 @@ class Pelicula:
         self.__anio=anio
 
     #Consultas
+    def obtenerNombre(self):
+        return self.__nombre
+
     def obtenerId(self):
         return self.__id
 
@@ -35,13 +39,40 @@ class Pelicula:
         return self.__nombre
 
     def obtenerGenero(self):
-        return self.__genero
-    
+        return biblioteca.Biblioteca.buscarGenero(self.__genero)
+
     def obtenerDirector(self):
-        return self.__director
+        return biblioteca.Biblioteca.buscarDirector(self.__director)
+
+    """
+    def obtenerActoreses(self):
+        actores = biblioteca.Biblioteca.obtenerActores()
+        # Crear una lista para los actores de la película actual
+        actores_pelicula = []
+        # Recorrer todos los actores
+        for actor in actores:
+            # Verificar si el actor trabajó en la película actual
+            if actor.id == self.obtenerId():
+                # Agregar el actor a la lista de actores de la película
+                actores_pelicula.append(actor)
+        # Devolver la lista de actores de la película
+        return actores_pelicula
+    """    
+
     
     def obtenerActores(self):
-        return self.__actores    
+        # Obtener todos los actores de la biblioteca
+        actores_totales = biblioteca.Biblioteca.obtenerActores()
+
+        # Filtrar los actores que participaron en la película actual
+        actores_pelicula = [actor for actor in actores_totales if actor.obtenerNombre() in self.__actores]
+
+        # Devolver la lista de actores de la película
+        return actores_pelicula
+
+
+
+
     
     def obtenerAnio(self):
         return self.__anio

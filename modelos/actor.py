@@ -35,14 +35,43 @@ class Actor(Artista):
         return list(colegasMapa)
     
     #punto b
+    """ 
     def obtenerPeliculas(self):
         peliculas = []
         for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
             if self == biblioteca.Biblioteca.obtenerActores():
                 peliculas.append(pelicula)
         return peliculas
+    """    
 
+    def obtenerPeliculas(self):
+        # Obtener todas las películas de la biblioteca
+        peliculas = biblioteca.Biblioteca.obtenerPeliculas()
+        # Crear una lista para las películas en las que participa el actor
+        peliculas_actuadas = []
+        # Recorrer todas las películas
+        for pelicula in peliculas:
+            # Obtener la lista de actores de la película
+            actores_pelicula = pelicula.obtenerActores()
+            # Verificar si el actor actual está en la lista de actores de la película
+            if self in actores_pelicula:
+                # Agregar la película a la lista del actor
+                peliculas_actuadas.append(pelicula)
+        # Devolver la lista de películas en las que participa el actor
+        return peliculas_actuadas
+
+
+    """   
+    def obtenerPeliculas(self):
+        peliculas = []
+        for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
+            if self in pelicula.obtenerActores():
+                peliculas.append(pelicula)
+        return peliculas
+    """ 
+    
     #punto c
+    
     def obtenerColegas(self):
         colegas = []
         for pelicula in self.obtenerPeliculas():
@@ -50,7 +79,20 @@ class Actor(Artista):
                     if actor!= self and actor not in colegas:
                         colegas.append(actor)
         return colegas
-        
+    
+    """    
+    def obtenerColegas(self):
+        colegas = set()
+        for pelicula in self.obtenerPeliculas():
+            colegas.update(pelicula.obtenerActores())
+        colegas.discard(self)
+        return list(colegas)
+    """ 
+
     #punto d
     # def __eq__(self, otro):
     #     return self.__id == otro.obtenerId()
+
+
+    #def __eq__(self, other):
+    #    return isinstance(other, Actor) and self.obtenerNombre() == other.obtenerNombre()
