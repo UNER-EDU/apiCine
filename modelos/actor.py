@@ -35,15 +35,6 @@ class Actor(Artista):
         return list(colegasMapa)
     
     #punto b
-    """ 
-    def obtenerPeliculas(self):
-        peliculas = []
-        for pelicula in biblioteca.Biblioteca.obtenerPeliculas():
-            if self == biblioteca.Biblioteca.obtenerActores():
-                peliculas.append(pelicula)
-        return peliculas
-    """    
-
     def obtenerPeliculas(self):
         # Obtener todas las películas de la biblioteca
         peliculas = biblioteca.Biblioteca.obtenerPeliculas()
