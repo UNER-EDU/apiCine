@@ -66,7 +66,7 @@ class Pelicula:
             "nombre": self.obtenerNombre()
         })
 
-
+    """
     def convertirAJSON(self):
         return {
             "nombre": self.obtenerNombre(),
@@ -77,6 +77,17 @@ class Pelicula:
             "actores": len(self.obtenerActores()),
             "anio": self.__anio
         }
+    """
+        
+    def convertirAJSON(self):
+        return {
+            "nombre": self.obtenerNombre(),
+            "genero": self.obtenerGenero().obtenerNombre(),
+            "director": self.obtenerDirector().obtenerNombre(),
+            "actores": [actor.obtenerNombre() for actor in self.obtenerActores()],
+            "anio": self.__anio
+        }
+
 
     def convertirAJSONFull(self):
         return {
