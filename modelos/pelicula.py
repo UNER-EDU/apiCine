@@ -44,34 +44,18 @@ class Pelicula:
     def obtenerDirector(self):
         return biblioteca.Biblioteca.buscarDirector(self.__director)
 
-    """
-    def obtenerActoreses(self):
-        actores = biblioteca.Biblioteca.obtenerActores()
-        # Crear una lista para los actores de la película actual
-        actores_pelicula = []
-        # Recorrer todos los actores
-        for actor in actores:
-            # Verificar si el actor trabajó en la película actual
-            if actor.id == self.obtenerId():
-                # Agregar el actor a la lista de actores de la película
-                actores_pelicula.append(actor)
-        # Devolver la lista de actores de la película
-        return actores_pelicula
-    """    
 
-    
     def obtenerActores(self):
-        # Obtener todos los actores de la biblioteca
         actores_totales = biblioteca.Biblioteca.obtenerActores()
+        actores_pelicula = []
 
-        # Filtrar los actores que participaron en la película actual
-        actores_pelicula = [actor for actor in actores_totales if actor.obtenerNombre() in self.__actores]
-
-        # Devolver la lista de actores de la película
+        # Recorrer los IDs de actores en la película
+        for actor_id in [a["id"] for a in self.__actores]:
+            # Buscar el objeto Actor correspondiente en la lista total
+            actor = next((a for a in actores_totales if a.obtenerId() == actor_id), None)
+            if actor:
+                actores_pelicula.append(actor)
         return actores_pelicula
-
-
-
 
     
     def obtenerAnio(self):
