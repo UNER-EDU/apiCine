@@ -66,25 +66,14 @@ class Pelicula:
             "nombre": self.obtenerNombre()
         })
 
-    """
-    def convertirAJSON(self):
-        return {
-            "nombre": self.obtenerNombre(),
-            # "genero": self.obtenerGenero().obtenerNombre(),
-             "genero": self.obtenerGenero(),
-            # "director": self.obtenerDirector().obtenerNombre(),
-            "director": self.obtenerDirector(),
-            "actores": len(self.obtenerActores()),
-            "anio": self.__anio
-        }
-    """
-        
+      
     def convertirAJSON(self):
         return {
             "nombre": self.obtenerNombre(),
             "genero": self.obtenerGenero().obtenerNombre(),
             "director": self.obtenerDirector().obtenerNombre(),
             "actores": [actor.obtenerNombre() for actor in self.obtenerActores()],
+            "cantidad de actores": len(self.obtenerActores()),
             "anio": self.__anio
         }
 
