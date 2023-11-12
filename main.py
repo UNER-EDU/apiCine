@@ -20,5 +20,6 @@ if __name__ == "__main__":
     api.add_resource(RecursoDirectores, '/api/directores')
     api.add_resource(RecursoPelicula, '/api/peliculas/<id>')
     api.add_resource(RecursoPeliculas, '/api/peliculas')
-
+    #api.add_resource(RecursosPersonal,'/miEnpoint/<nombre>')
+    #api.add_resource(Recursos,'/miEnpointIndice/<numero>')
     app.run(debug=True)

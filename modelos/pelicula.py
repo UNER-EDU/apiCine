@@ -31,13 +31,16 @@ class Pelicula:
     def obtenerId(self):
         return self.__id
 
+    def obtenerNombre(self):
+        return self.__nombre
+
     def obtenerGenero(self):
         return self.__genero
     
     def obtenerDirector(self):
         return self.__director
     
-    def obtenerActor(self):
+    def obtenerActores(self):
         return self.__actores    
     
     def obtenerAnio(self):

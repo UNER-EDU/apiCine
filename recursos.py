@@ -18,8 +18,7 @@ class RecursoActor(Resource):
             return json.loads(json.dumps(actor.convertirAJSONFull())), 200
         else:
             return {"error": "Actor no encontrado"}, 404
-
-
+    
 class RecursoActores(Resource):
 
     def get(self):
@@ -77,3 +76,14 @@ class RecursoPeliculas(Resource):
         else:
             peliculas = biblioteca.Biblioteca.obtenerPeliculas()
         return json.loads(json.dumps(peliculas, default=lambda o: o.convertirAJSON())), 200
+
+#Codigos de pruebas
+class RecursosPersonal(Resource):
+   
+    def get(self, nombre):        
+        return json.loads(json.dumps(f"Saludos {nombre}")),200
+class Recursos(Resource): 
+    msg=['Luis','Camilo','Noelia']  
+    def get(self,numero): 
+        i=int(numero)            
+        return json.loads(json.dumps(f"Este es un GET {self.msg[i]}" )),200
