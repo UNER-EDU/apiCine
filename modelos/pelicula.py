@@ -57,7 +57,7 @@ class Pelicula:
                 actores_pelicula.append(actor)
         return actores_pelicula
     """
-
+    #menos rebuscado más legiible
     def obtenerActores(self):
         actores_totales = biblioteca.Biblioteca.obtenerActores()
         actores_pelicula = []
