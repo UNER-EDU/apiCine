@@ -65,6 +65,7 @@ class Biblioteca:
                 peliculas=sorted(peliculas,key=lambda a:a.obtenerDirector(),reverse=reverso)
             elif orden == 'actores':
                 peliculas=sorted(peliculas,key=lambda a:a.obtenerActores(),reverse=reverso)
+
             elif orden == 'anio':
                 peliculas=sorted(peliculas,key=lambda a:a.obtenerAnio(),reverse=reverso)
         return peliculas
