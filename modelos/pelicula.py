@@ -44,36 +44,19 @@ class Pelicula:
     def obtenerDirector(self):
         return biblioteca.Biblioteca.buscarDirector(self.__director)
 
-    """
     def obtenerActores(self):
-        actores_totales = biblioteca.Biblioteca.obtenerActores()
-        actores_pelicula = []
+        actoresTotales = biblioteca.Biblioteca.obtenerActores()
+        actoresPelicula = []
+        # Obtener los IDs de los actores de la película        
+        idsActoresPelicula = [] 
+        for actor in self.__actores:
+            idsActoresPelicula.append(actor["id"])
+        #obtener los actores de la película         
+        for actorTotal in actoresTotales:
+            if actorTotal.obtenerId() in idsActoresPelicula:
+                actoresPelicula.append(actorTotal)
+        return actoresPelicula     
 
-        # Recorrer los IDs de actores en la película
-        for actor_id in [a["id"] for a in self.__actores]:
-            # Buscar el objeto Actor correspondiente en la lista total
-            actor = next((a for a in actores_totales if a.obtenerId() == actor_id), None)
-            if actor:
-                actores_pelicula.append(actor)
-        return actores_pelicula
-    """
-    #menos rebuscado más legiible
-    def obtenerActores(self):
-        actores_totales = biblioteca.Biblioteca.obtenerActores()
-        actores_pelicula = []
-
-        # Obtener los IDs de los actores de la película
-        ids_actores_pelicula = [actor["id"] for actor in self.__actores]
-
-        # Buscar los objetos Actor correspondientes en la lista total
-        for actor_total in actores_totales:
-            if actor_total.obtenerId() in ids_actores_pelicula:
-                actores_pelicula.append(actor_total)
-
-        return actores_pelicula
-
-
-    
     def obtenerAnio(self):
         return self.__anio
 
@@ -95,11 +78,11 @@ class Pelicula:
 
 
     def convertirAJSONFull(self):
-        return {
-            "nombre": self.obtenerNombre(),
+        return {            
+            "nombres": self.obtenerNombre(),
             "genero": self.obtenerGenero().obtenerNombre(),
             "director": self.obtenerDirector().obtenerNombre(),
-            "actores": self.__mapearActores(),
+            "actores": self.__mapearActores(),            
             "anio": self.__anio
         }
     

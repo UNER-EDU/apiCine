@@ -18,7 +18,7 @@ class Actor(Artista):
             "nombre": self.obtenerNombre(),
             "generos": self._mapearGeneros(),
             "peliculas": len(self.obtenerPeliculas()),
-            # "colegas": len(self.obtenerColegas())
+            "colegas": len(self.obtenerColegas())
         }
 
     def convertirAJSONFull(self):
@@ -64,4 +64,4 @@ class Actor(Artista):
     
   
     def __eq__(self, otro):
-        return isinstance(otro, Actor) and self.obtenerNombre().strip().lower() == otro.obtenerNombre().strip().lower()
+        return isinstance(otro, Actor) and self.obtenerNombre() == otro.obtenerNombre()
