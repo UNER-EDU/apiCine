@@ -7,6 +7,9 @@ class Director(Artista):
     def __init__(self,id,nombre):
         super().__init__(id,nombre)
     
+    def __lt__(self, otro_actor):
+        return self.nombre < otro_actor.nombre
+    
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
     

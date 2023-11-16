@@ -8,6 +8,9 @@ class Actor(Artista):
         super().__init__(id, nombre)
         self.id=id
         self.nombre=nombre
+
+    def __lt__(self, otro_actor):
+        return self.nombre < otro_actor.nombre
         
 
     def __repr__(self):
