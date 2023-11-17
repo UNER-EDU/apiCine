@@ -13,8 +13,8 @@ from modelos.pelicula import Pelicula
 class Biblioteca:
     # Ruta de archivo Luis
     #__archivoDeDatos = "H:\\UNTDF UNER\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
-    __archivoDeDatos = "C:\\code\\Api_cine_Uner\\apiCine\\biblioteca.json"        
     #__archivoDeDatos en ruta pc Cristian
+    __archivoDeDatos = "C:\\code\\Api_cine_Uner\\apiCine\\biblioteca.json"            
     __actores = []
     __directores = []
     __generos = []
@@ -24,18 +24,7 @@ class Biblioteca:
     def inicializar():
         datos = Biblioteca.__parsearArchivoDeDatos()
         Biblioteca.__convertirJsonAListas(datos)
-        # print("Ingresando a biblioteca")
-        # print("Listados")
-        # print("Actores")
-        # print(Biblioteca.obtenerActores())
-        # print("Directores")
-        # print(Biblioteca.obtenerDirectores())
-        # print("Peliculas")
-        # print(Biblioteca.obtenerPeliculas())
-        # print("Generos")
-        # print(Biblioteca.obtenerGeneros())
-        
-
+      
     def obtenerActores(orden=None, reverso=False):
         actores=Biblioteca.__actores
         if isinstance(orden, str):
@@ -62,10 +51,9 @@ class Biblioteca:
             if orden == 'nombre':
               peliculas=sorted(peliculas,key=lambda a:a.obtenerNombre(),reverse=reverso)
             elif orden == 'director':
-                peliculas=sorted(peliculas,key=lambda a:a.obtenerDirector(),reverse=reverso)
+                peliculas = sorted(peliculas, key=lambda a: a.obtenerDirector().obtenerId(), reverse=reverso)
             elif orden == 'actores':
-                peliculas=sorted(peliculas,key=lambda a:a.obtenerActores(),reverse=reverso)
-
+                peliculas = sorted(peliculas, key=lambda a: len(a.obtenerActores()), reverse=reverso)
             elif orden == 'anio':
                 peliculas=sorted(peliculas,key=lambda a:a.obtenerAnio(),reverse=reverso)
         return peliculas

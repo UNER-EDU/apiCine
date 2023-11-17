@@ -23,7 +23,11 @@
     {
       "id": "4ebd6783-1d8f-47ab-a433-b3664bf49c9c",
       "nombre": "Heath Ledger"
-    }
+    },
+    {
+      "id": "2071bfac-dd73-44e0-80a6-260fc48af106",
+      "nombre": "Will Ferrell"
+    }    
   ],
   "directores": [
     {
@@ -48,10 +52,13 @@
       "genero": "dea0d5e1-4eeb-40ae-9614-cad44fb4651e",
       "actores": [
         {
-          "id": "5219b4f9-6205-43a8-91ca-c22c7effad48"
-        },
+           "id": "5219b4f9-6205-43a8-91ca-c22c7effad48"
+         },
         {
           "id": "2071bfac-dd73-44e0-80a6-260fc48af105"
+        },
+        {
+          "id": "2071bfac-dd73-44e0-80a6-260fc48af106"
         }
       ]
     },

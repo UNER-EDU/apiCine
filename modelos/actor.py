@@ -9,10 +9,6 @@ class Actor(Artista):
         self.id=id
         self.nombre=nombre
 
-    def __lt__(self, otro_actor):
-        return self.nombre < otro_actor.nombre
-        
-
     def __repr__(self):
         return json.dumps(self.convertirAJSON())
 
@@ -37,7 +33,6 @@ class Actor(Artista):
         colegasMapa = map(lambda a: a.obtenerNombre(), colegas)
         return list(colegasMapa)
     
-    #punto b
     def obtenerPeliculas(self):
         # Obtener todas las películas de la biblioteca
         peliculas = biblioteca.Biblioteca.obtenerPeliculas()
@@ -53,10 +48,7 @@ class Actor(Artista):
                 peliculas_actuadas.append(pelicula)
         # Devolver la lista de películas en las que participa el actor
         return peliculas_actuadas
-
-
-    #punto c
-    
+        
     def obtenerColegas(self):
         colegas = []
         for pelicula in self.obtenerPeliculas():
@@ -64,7 +56,6 @@ class Actor(Artista):
                     if actor!= self and actor not in colegas:
                         colegas.append(actor)
         return colegas
-    
-  
+      
     def __eq__(self, otro):
         return isinstance(otro, Actor) and self.obtenerNombre() == otro.obtenerNombre()

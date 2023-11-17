@@ -1,3 +1,9 @@
+#UNER
+#Trabajo final integrador 
+#Programación II
+#Tec Univ en Desarrollo de Aplicaciones Web
+#Integrantes: [Luis Sánchez Barranco, Cristian Seltenreich] 
+
 # Flask
 from flask import Flask
 from flask_restful import Api

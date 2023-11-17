@@ -65,13 +65,12 @@ class Pelicula:
             "nombre": self.obtenerNombre()
         })
 
-    """  
     def convertirAJSON(self):
-        return {
-            "nombre": self.obtenerNombre(),
+        return {            
+            "nombre de la pelicula": self.obtenerNombre(),
             "genero": self.obtenerGenero().obtenerNombre(),
             "director": self.obtenerDirector().obtenerNombre(),
-            "actores": [actor.obtenerNombre() for actor in self.obtenerActores()],
+            "actores protagonistas": [actor.obtenerNombre() for actor in self.obtenerActores()],
             "cantidad de actores": len(self.obtenerActores()),
             "anio": self.__anio
         }
@@ -85,7 +84,7 @@ class Pelicula:
             "actores": self.__mapearActores(),            
             "anio": self.__anio
         }
-    """        
+            
     def __mapearActores(self):
         actores = self.obtenerActores()
         actoresMapa = map(lambda a: a.obtenerNombre(), actores)
@@ -94,21 +93,3 @@ class Pelicula:
     #sobrecargando
     def __eq__(self, otro):
         return self.__id == otro.obtenerId()
-    
-    def convertirAJSON(self):
-        return {
-            "nombre": self.obtenerNombre(),
-            "genero": self.obtenerGenero().obtenerNombre(),
-            "director": self.obtenerDirector().obtenerNombre(),
-            "actores": len(self.obtenerActores()),
-            "anio": self.__anio
-        }
-
-    def convertirAJSONFull(self):
-        return {
-            "nombre": self.obtenerNombre(),
-            "genero": self.obtenerGenero().obtenerNombre(),
-            "director": self.obtenerDirector().obtenerNombre(),
-            "actores": self.__mapearActores(),
-            "anio": self.__anio
-        }
