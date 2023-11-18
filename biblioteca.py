@@ -14,7 +14,11 @@ class Biblioteca:
     # Ruta de archivo Luis
     #__archivoDeDatos = "H:\\UNTDF UNER\\Programacion 2\\Trabajo Practico Final\\biblioteca.json"
     #__archivoDeDatos en ruta pc Cristian
-    __archivoDeDatos = "C:\\code\\Api_cine_Uner\\apiCine\\biblioteca.json"            
+    __archivoDeDatos = "C:\\code\\Api_cine_Uner\\apiCine\\biblioteca.json"
+
+    #colocar la ruta absoluta de su archivo biblioteca.json 
+    #__archivoDeDatos = "**************\\biblioteca.json"
+    
     __actores = []
     __directores = []
     __generos = []

@@ -37,17 +37,17 @@ class Actor(Artista):
         # Obtener todas las películas de la biblioteca
         peliculas = biblioteca.Biblioteca.obtenerPeliculas()
         # Crear una lista para las películas en las que participa el actor
-        peliculas_actuadas = []
+        peliculaActuadas = []
         # Recorrer todas las películas
         for pelicula in peliculas:
             # Obtener la lista de actores de la película
-            actores_pelicula = pelicula.obtenerActores()
+            actorePelicula = pelicula.obtenerActores()
             # Verificar si el actor actual está en la lista de actores de la película
-            if self in actores_pelicula:
+            if self in actorePelicula:
                 # Agregar la película a la lista del actor
-                peliculas_actuadas.append(pelicula)
+                peliculaActuadas.append(pelicula)
         # Devolver la lista de películas en las que participa el actor
-        return peliculas_actuadas
+        return peliculaActuadas
         
     def obtenerColegas(self):
         colegas = []
