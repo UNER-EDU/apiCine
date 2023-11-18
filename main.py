@@ -15,7 +15,6 @@ from recursos import *
 
 if __name__ == "__main__":
     Biblioteca.inicializar()
-    #print(Biblioteca.obtenerActores())
   
     app = Flask(__name__)
 
@@ -26,5 +25,5 @@ if __name__ == "__main__":
     api.add_resource(RecursoDirectores, '/api/directores')
     api.add_resource(RecursoPelicula, '/api/peliculas/<id>')
     api.add_resource(RecursoPeliculas, '/api/peliculas')
-        
+
     app.run(debug=True)
